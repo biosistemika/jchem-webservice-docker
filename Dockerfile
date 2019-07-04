@@ -16,6 +16,11 @@ FROM tomcat:8.5.34-jre8
 MAINTAINER JCB Support "jcb-support@chemaxon.com"
 
 # copy files
+COPY web.xml /usr/local/tomcat/conf/web.xml
+
+COPY marvinjs /usr/local/tomcat/webapps/ROOT/marvinjs
+COPY marvin4js-license.cxl /usr/local/tomcat/webapps/ROOT/marvin4js-license.cxl
+
 COPY webservices.war /usr/local/tomcat/webapps/webservices.war
 COPY license.cxl /usr/local/tomcat/.chemaxon/license.cxl
 COPY ws-config.xml /usr/local/tomcat/.chemaxon/ws-config.xml
